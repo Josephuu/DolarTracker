@@ -1,0 +1,81 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fa; /* Fondo gris claro */
+  color: #333; /* Texto oscuro para contraste */
+}
+
+.App {
+  text-align: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+/* Título principal */
+h1 {
+  font-size: 2.5rem;
+  color: #2c3e50; /* Azul oscuro elegante */
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Contenedor de las tarjetas */
+.dollar-list {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Estilo de cada tarjeta */
+.dollar-card {
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 20px;
+  width: 180px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación al pasar el mouse */
+}
+
+/* Efecto al pasar el mouse */
+.dollar-card:hover {
+  transform: translateY(-5px); /* Elevación ligera */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+/* Títulos de las tarjetas */
+.dollar-card h2 {
+  font-size: 1.3rem;
+  color: #27ae60; /* Verde financiero */
+  margin: 0 0 15px 0;
+  text-transform: capitalize;
+}
+
+/* Estilo de los precios */
+.dollar-card p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+  color: #7f8c8d; /* Gris suave */
+}
+
+/* Resaltar el valor numérico */
+.dollar-card p span {
+  color: #2c3e50; /* Azul oscuro para los números */
+  font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .dollar-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}

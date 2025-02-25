@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dolar-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dolar-frontend
+  template:
+    metadata:
+      labels:
+        app: dolar-frontend
+    spec:
+      containers:
+      - name: dolar-frontend
+        image: josephuuuu/dolar-frontend:latest
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dolar-frontend-service
+spec:
+  selector:
+    app: dolar-frontend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer

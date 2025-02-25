@@ -1,0 +1,14 @@
+# Ignorar archivos generados y carpetas de dependencias
+/backend/venv/           # Carpeta del entorno virtual de Python
+/backend/__pycache__/    # Archivos temporales de Python
+/frontend/node_modules/  # Dependencias de Node.js
+/frontend/build/         # Archivos generados por el build de React
+/frontend/dist/          # Archivos de distribución, si los hay
+*.log                    # Archivos de log
+*.pyc                    # Archivos compilados de Python
+.DS_Store                # Archivos de macOS (por si acaso)
+.env                     # Archivos de variables de entorno
+
+# Ignorar configuraciones específicas de IDE o editores
+*.idea/                  # JetBrains (PyCharm, IntelliJ, etc.)
+*.vscode/                # VS Code

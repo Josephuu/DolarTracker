@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dolar-backend
+spec:
+  replicas: 2  # Número de instancias
+  selector:
+    matchLabels:
+      app: dolar-backend
+  template:
+    metadata:
+      labels:
+        app: dolar-backend
+    spec:
+      containers:
+      - name: dolar-backend
+        image: josephuuuu/dolar-backend:latest  # O "dolar-backend:latest" si es local
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+        ports:
+        - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dolar-backend-service
+spec:
+  selector:
+    app: dolar-backend
+  ports:
+  - protocol: TCP
+    port: 8000
+    targetPort: 8000
+  type: ClusterIP  # Solo accesible dentro del cluster
